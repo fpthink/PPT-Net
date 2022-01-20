@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Pyramid Point Cloud Transformer for Large-Scale Place Recognition  
 
 by Le Hui, Hang Yang, Mingmei Cheng, Jin Xie, and Jian Yang
