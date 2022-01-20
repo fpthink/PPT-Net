@@ -1,0 +1,118 @@
+# for_debug
+FOR_DEBUG: True        # Ture or False
+
+MANUAL_SEED: 123
+TRAIN_GPU:
+  - 0
+
+DATA_TYPE: "baseline"   # baseline or refine
+
+ARCH: "pptnet"
+GLOBAL_FEAT: True
+FEATURE_TRANSFORM: True
+MAX_POOL: False
+GROUP: 8
+
+AGGREGATION: 'spvlad'
+LAST_NORMALIZATION: False
+NUM_POINTS: 4096
+
+FEATURE_OUTPUT_DIM: 256
+
+FEATURE_SIZE:
+  - 256
+  - 256
+  - 256
+  - 256
+
+MAX_SAMPLES:
+  - 64
+  - 256
+  - 1024
+  - 4096
+
+CLUSTER_SIZE:
+  - 1
+  - 4
+  - 16
+  - 64
+
+OUTPUT_DIM:
+  - 256
+  - 256
+  - 256
+  - 256
+
+GATING: True
+
+SAMPLING:
+  - 1024
+  - 256
+  - 64
+  - 16
+
+KNN:
+  - 20
+  - 20
+  - 20
+  - 20
+
+DATASET_FOLDER: '/test/dataset/benchmark_datasets/'
+
+# TRAIN
+BATCH_NUM_QUERIES: 1
+TRAIN_POSITIVES_PER_QUERY: 2
+TRAIN_NEGATIVES_PER_QUERY: 14
+
+DECAY_STEP: 200000
+DECAY_RATE: 0.7
+
+# BASE_LEARNING_RATE: 0.00001
+BASE_LEARNING_RATE: 0.0005
+MOMENTUM: 0.9
+OPTIMIZER: 'adam'
+MAX_EPOCH: 30
+
+LEARNING_RATE_DECAY: 'step'
+
+# the margin is too small
+MARGIN_1: 0.5
+MARGIN_2: 0.2
+
+BN_INIT_DECAY: 0.5
+BN_DECAY_DECAY_RATE: 0.5
+BN_DECAY_CLIP: 0.99
+
+TRAIN_FILE_ROOT: '/test/work2020/pointnetvlad/generating_queries/pickle_data'
+TEST_FILE_ROOT: '/test/work2020/pointnetvlad/generating_queries/pickle_data'
+
+# LOSS
+LOSS_FUNCTION: 'quadruplet'
+LOSS_LAZY: True
+TRIPLET_USE_BEST_POSITIVES: False
+LOSS_IGNORE_ZERO_BATCH: False
+
+# EVAL6
+EVAL_BATCH_SIZE: 1
+EVAL_POSITIVES_PER_QUERY: 4
+EVAL_NEGATIVES_PER_QUERY: 10
+
+DEGREE: 0
+
+#  ----------- switch data for evaluation ----------
+EVAL_DATASET: 'oxford'
+EVAL_DATABASE_FILE: '/test/work2020/pointnetvlad/generating_queries/pickle_data/oxford_evaluation_database.pickle'
+EVAL_QUERY_FILE: '/test/work2020/pointnetvlad/generating_queries/pickle_data/oxford_evaluation_query.pickle'
+
+#EVAL_DATASET: 'residential'
+#EVAL_DATABASE_FILE: '/test/work2020/pointnetvlad/generating_queries/pickle_data/residential_evaluation_database.pickle'
+#EVAL_QUERY_FILE: '/test/work2020/pointnetvlad/generating_queries/pickle_data/residential_evaluation_query.pickle'
+
+#EVAL_DATASET: 'business'
+#EVAL_DATABASE_FILE: '/test/work2020/pointnetvlad/generating_queries/pickle_data/business_evaluation_database.pickle'
+#EVAL_QUERY_FILE: '/test/work2020/pointnetvlad/generating_queries/pickle_data/business_evaluation_query.pickle'
+
+#EVAL_DATASET: 'university'
+#EVAL_DATABASE_FILE: '/test/work2020/pointnetvlad/generating_queries/pickle_data/university_evaluation_database.pickle'
+#EVAL_QUERY_FILE: '/test/work2020/pointnetvlad/generating_queries/pickle_data/university_evaluation_query.pickle'
+
